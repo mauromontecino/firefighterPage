@@ -1,0 +1,175 @@
+/** Sidebar **/
+.s-sidebar__nav--container {
+  @include content (100% , 14%, 0 , center );
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.s-sidebar__nav--logo {
+  width: 115px;
+  height: 115px;
+}
+
+.s-sidebar__trigger {
+  @include content (100% , 4em, 1em , start );
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  > i{
+    display: inline-block;
+  margin: 1.5em 0 0 1.5em;
+  color: #fff;
+  }
+}
+
+.s-sidebar__nav {
+  @include content (15em , 100%, unset , start );
+  position: fixed;
+  top: 0;
+  left: -15em;
+  overflow: hidden;
+  transition: all 0.3s ease-in;
+  background: #2C2C2C;
+  color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  ul {
+    top: 4em;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 15em;
+    height: 45%;
+    li {
+      width: 100%;
+    }
+  }
+  p {
+    @include content (85% , auto, 12px, 0 );
+    font-family: $letrasDef;
+    margin: 1.5em;
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: map-get($map: $font-weights, $key: 'small');
+    text-shadow: 1px 1px black;
+  }
+}
+
+.s-sidebar__nav:hover,
+.s-sidebar__nav:focus,
+.s-sidebar__trigger:focus + .s-sidebar__nav,
+.s-sidebar__trigger:hover + .s-sidebar__nav {
+  left: 0;
+}
+
+.s-sidebar__nav-link {
+  @include content (0 , 3.5em, unset , start );
+  position: relative;
+  display: inline-block;
+  em {
+    position: absolute;
+    top: 80%;
+    left: 4em;
+    transform: translateY(-50%);
+    font-family: $letrasDef;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: map-get($map: $font-weights, $key: 'medium');
+  }
+  &:hover {
+    color: $colorDef;
+    border-radius: 10px;
+    margin: 0 10px;
+  }
+  > i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 4em;
+    height: 4em;
+  }
+  > i::before {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 4em;
+    height: 4em;
+  }
+  > img::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+
+/**BOTON DONAR AHORA**/
+.cta {
+  position: relative;
+  margin: auto;
+  padding: 30px 20px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    display: block;
+    border-radius: 50px;
+    background: rgba(255, 204, 51, 0.05);
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+  }
+  span {
+    position: relative;
+    font-family: $letrasDef;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 0, 0, 0.8);
+    padding-left: 22px;
+    font-weight: map-get($map: $font-weights, $key: 'extra-bold');
+  }
+  svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: $colorDef;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+  }
+  &:hover:before {
+    width: 90%;
+    background: rgba(255, 204, 51, 0.7);
+  }
+  &:hover svg {
+    transform: translateX(0);
+  }
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.fa-hand-holding-dollar {
+  padding-left: 4px;
+  color: #35b615;
+}

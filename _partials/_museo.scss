@@ -1,0 +1,26 @@
+/**PAGES MUSEO**/
+
+
+.row{
+    padding-right: 0;
+    padding-left: 0;
+    margin: 0px;
+}
+
+.carouselMuseo{
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+#museobg{
+    background-image: url(../img/32925791_1018351548289988_7750280240957489152_n.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.card-body{
+    font-family: 'Alegreya Sans SC', sans-serif;
+    h5 {
+        font-weight: 600;
+    }
+}
